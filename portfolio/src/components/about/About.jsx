@@ -8,7 +8,7 @@ function About({ darkMode }) {
   return (
     <div className={`profile-card ${darkMode ? "dark" : "light"}`} id="about">
       <h1 className="name">Jubin Rohidas</h1>
-      <h2 className="role">Web Developer</h2>
+      <h2 className="role">Full Stack Web Developer</h2>
 
       <div className="contact">
        <span>
@@ -29,9 +29,9 @@ function About({ darkMode }) {
       </p>
 
       <div className="links">
-        <a href="/resume.pdf" download className="resume-btn">
-          Download Resume
-        </a>
+         <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="resume-btn">
+    View Resume
+  </a>
         <div className="social-icons">
           <a
             href="https://github.com/jubindas"

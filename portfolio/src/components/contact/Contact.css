@@ -1,0 +1,109 @@
+/* Global Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Main Contact Section */
+.contact-section {
+  padding: 40px 20px;
+  max-width: 500px;
+  width: 100%;
+  margin: 60px auto;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--heading-color);
+}
+
+.contact-subtitle {
+  font-size: 0.9rem;
+  color: var(--subtext-color);
+  margin-bottom: 20px;
+}
+
+/* Form Layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #00ff88;
+  font-size: 0.9rem;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: border-color 0.2s ease, background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00ffcc;
+  outline: none;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #00ff88;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #00cc70;
+}
+
+/* Theme Variables */
+.contact-section.dark {
+  background-color: #0d0d0d;
+  --heading-color: #00ff88;
+  --subtext-color: #aaaaaa;
+  --text-color: #e0e0e0;
+  --input-bg: #1a1a1a;
+}
+
+.contact-section.light {
+  background-color: #e6fff2;
+  --heading-color: #004d33;
+  --subtext-color: #444;
+  --text-color: #111;
+  --input-bg: #ffffff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 30px 16px;
+    margin: 40px 10px;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+}
