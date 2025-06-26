@@ -5,10 +5,14 @@ import Skill from './components/skills/Skill.jsx';
 
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem('darkMode');
+    return saved === null ? true : saved === 'true'; // default: dark
+  });
 
   useEffect(() => {
-    document.body.className = darkMode ? 'dark' : '';
+    document.body.className = darkMode ? 'dark' : 'light';
+    localStorage.setItem('darkMode', darkMode);
   }, [darkMode]);
 
   return (
