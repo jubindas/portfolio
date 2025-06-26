@@ -1,0 +1,94 @@
+
+.profile-card {
+  max-width: 850px;
+  padding: 30px;
+  border-radius: 12px;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 40px auto;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.profile-card.dark {
+  background-color: #0d0d0d;
+  color:  #ffffff;
+  
+}
+
+
+.profile-card.light {
+  background-color:  #ffffff;
+  color: #000000;
+  
+}
+
+
+.name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.role {
+  font-size: 1.2rem;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+
+.contact {
+  display: flex;
+  gap: 20px;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  color: inherit;
+}
+
+.contact span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: inherit;
+}
+
+.links {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.resume-btn {
+  padding: 10px 15px;
+  background-color: #00ff88;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  
+}
+
+.resume-btn:hover {
+  background-color: #00cc6f;
+}
+
+.social-icons a {
+  color: inherit;
+  margin-right: 10px;
+  transition: transform 0.2s;
+  padding: 10px;
+  display: inline-block;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
