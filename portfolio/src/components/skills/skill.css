@@ -1,4 +1,4 @@
-/* Outer wrapper handles light/dark background */
+/* ===== Light/Dark Mode ===== */
 .skills-container.dark {
   background-color: #0d0d0d;
   color: #ffffff;
@@ -15,7 +15,7 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Main title */
+/* ===== Section Headings ===== */
 .skills-title {
   font-size: 2.5rem;
   margin-bottom: 10px;
@@ -23,7 +23,6 @@
   text-align: center;
 }
 
-/* Subtitle under title */
 .skills-subtitle {
   font-size: 1rem;
   margin-bottom: 30px;
@@ -31,30 +30,30 @@
   text-align: center;
 }
 
-/* Each section block */
+/* ===== Skill Section ===== */
 .skill-section {
   margin-bottom: 40px;
 }
 
-/* Section headings (Frontend, Backend, etc.) */
+/* Frontend, Backend, etc. title */
 .section-title {
   font-size: 1.6rem;
   font-weight: 600;
   text-align: left;
-  margin: 20px 0 20px 320px;
+  margin: 20px 0 20px 1rem; /* ✅ Default for mobile */
   color: inherit;
 }
 
-/* Container for icons */
+/* ===== Skill Icon Grid ===== */
 .skill-icons {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 25px;
-  margin-left: 320px;
+  margin-left: 1rem; /* ✅ Default for mobile */
 }
 
-/* Icon cards */
+/* ===== Icon Card ===== */
 .skill-item {
   background-color: #1a1a1a;
   width: 110px;
@@ -71,7 +70,6 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Icon label */
 .skill-item p {
   font-size: 0.75rem;
   margin-top: 6px;
@@ -80,23 +78,35 @@
   text-align: center;
 }
 
-/* Hover effect */
 .skill-item:hover {
   background-color: #00ff88;
   color: #0d0d0d;
   transform: scale(1.1);
 }
 
-/* Responsive Fixes */
-@media (max-width: 768px) {
-  .section-title,
-  .skill-icons {
-    margin-left: 0;
-    justify-content: center;
+/* ===== Desktop Margin Override ===== */
+@media (min-width: 1024px) {
+  .section-title {
+    margin-left: 320px;
   }
 
+  .skill-icons {
+    margin-left: 320px;
+  }
+}
+
+/* ===== Responsive Layout for Small Screens ===== */
+@media (max-width: 768px) {
   .skill-item {
     width: 100px;
     height: 100px;
+  }
+
+  .skill-icons {
+    justify-content: center;
+  }
+
+  .section-title {
+    text-align: center;
   }
 }

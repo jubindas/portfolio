@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 function Navbar({ darkMode, setDarkMode }) {
-  const [menuOpen, setMenuOpen] = useState(false);
+ 
+
+
 
   return (
     <nav className="custom-navbar">
       <div className="logo">Jubin</div>
 
-      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <FaTimes /> : <FaBars />}
+     
+
+      {/* Navigation links */}
+      <div className={`nav-links show-menu`}>
+        <a href="#about" >About</a>
+        <a href="#skills" >Skills</a>
+        <a href="#projects" >Projects</a>
+        <a href="#contact" >Contact</a>
+        <button className="mode-toggle" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? <FaSun /> : <FaMoon />}
+        </button>
       </div>
-
-      <div className={`nav-links ${menuOpen ? 'show-menu' : ''}`}>
-  <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-  <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
-  <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
-  <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-  <button className="mode-toggle" onClick={() => setDarkMode(!darkMode)}>
-    {darkMode ? <FaSun /> : <FaMoon />}
-  </button>
-</div>
-
     </nav>
   );
 }

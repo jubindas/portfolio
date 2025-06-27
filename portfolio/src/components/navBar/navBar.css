@@ -1,3 +1,4 @@
+/* === Global body === */
 body {
   margin: 0;
   padding: 0;
@@ -5,11 +6,13 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* === Dark Mode === */
 body.dark {
   background-color: #0d0d0d;
   color: #00ff88;
 }
 
+/* === Navbar Container === */
 .custom-navbar {
   display: flex;
   justify-content: space-between;
@@ -18,21 +21,24 @@ body.dark {
   background-color: #0d0d0d;
   color: #00ff88;
   border-bottom: 1px solid #00ff88;
-  
+  position: relative;
 }
 
+/* === Logo === */
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  margin-left: 300px;
+  margin-left: 1rem; /* ✅ default for mobile */
 }
 
+/* === Nav Links Container === */
 .nav-links {
   display: flex;
   align-items: center;
-  margin-right: 300px;
+  margin-right: 1rem; /* ✅ default for mobile */
 }
 
+/* === Individual Nav Links === */
 .nav-links a {
   margin-left: 2rem;
   text-decoration: none;
@@ -45,6 +51,7 @@ body.dark {
   color: #1aff9c;
 }
 
+/* === Dark/Light Mode Toggle Button === */
 .mode-toggle {
   background: none;
   border: none;
@@ -59,7 +66,7 @@ body.dark {
   color: #1aff9c;
 }
 
-/* Light mode */
+/* === Light Mode Overrides === */
 body:not(.dark) .custom-navbar {
   background-color: #f0f0f0;
   color: #111;
@@ -74,18 +81,29 @@ body:not(.dark) .nav-links a:hover,
 body:not(.dark) .mode-toggle:hover {
   color: #333;
 }
-/* ✅ Hamburger icon hidden by default */
+
+body:not(.dark) .hamburger {
+  color: #111;
+}
+
+/* === Hamburger Icon (hidden on desktop) === */
 .hamburger {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
   color: #00ff88;
+  z-index: 10;
+  margin-right: 1rem;
 }
 
-/* ✅ Mobile view */
+/* === Mobile/Tablet View === */
 @media screen and (max-width: 768px) {
   .logo {
     margin-left: 1rem;
+  }
+
+  .hamburger {
+    display: block;
   }
 
   .nav-links {
@@ -94,11 +112,12 @@ body:not(.dark) .mode-toggle:hover {
     align-items: center;
     position: absolute;
     top: 60px;
-    right: 0;
+    left: 0;
     width: 100%;
     background-color: #0d0d0d;
     border-top: 1px solid #00ff88;
     padding: 1rem 0;
+    margin: 0;
   }
 
   .nav-links.show-menu {
@@ -109,18 +128,15 @@ body:not(.dark) .mode-toggle:hover {
   .mode-toggle {
     margin: 1rem 0;
   }
+}
 
-  .hamburger {
-    display: block;
-    margin-right: 1rem;
+/* === Desktop View Only (override margins) === */
+@media screen and (min-width: 1024px) {
+  .logo {
+    margin-left: 300px; /* ✅ Only for desktop */
   }
 
   .nav-links {
-    margin-right: 0;
+    margin-right: 300px; /* ✅ Only for desktop */
   }
-}
-
-/* Light mode hamburger icon fix */
-body:not(.dark) .hamburger {
-  color: #111;
 }
