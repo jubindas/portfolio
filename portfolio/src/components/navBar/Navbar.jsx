@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Navbar.css';
+import './navBar.css';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
 function Navbar({ darkMode, setDarkMode }) {
