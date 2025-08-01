@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -17,30 +17,32 @@ body.dark {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 1.2rem 2rem;
   background-color: #0d0d0d;
   color: #00ff88;
   border-bottom: 1px solid #00ff88;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 /* === Logo === */
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  margin-left: 1rem; /* ✅ default for mobile */
 }
 
-/* === Nav Links Container === */
+/* === Nav Links === */
 .nav-links {
   display: flex;
   align-items: center;
-  margin-right: 1rem; /* ✅ default for mobile */
+  gap: 2rem;
 }
 
-/* === Individual Nav Links === */
+/* === Nav Links === */
 .nav-links a {
-  margin-left: 2rem;
   text-decoration: none;
   color: #00ff88;
   font-weight: 500;
@@ -51,11 +53,10 @@ body.dark {
   color: #1aff9c;
 }
 
-/* === Dark/Light Mode Toggle Button === */
+/* === Theme Toggle Button === */
 .mode-toggle {
   background: none;
   border: none;
-  margin-left: 2rem;
   font-size: 1.2rem;
   color: #00ff88;
   cursor: pointer;
@@ -86,38 +87,31 @@ body:not(.dark) .hamburger {
   color: #111;
 }
 
-/* === Hamburger Icon (hidden on desktop) === */
+/* === Hamburger Icon === */
 .hamburger {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
   color: #00ff88;
-  z-index: 10;
-  margin-right: 1rem;
 }
 
-/* === Mobile/Tablet View === */
+/* === Mobile Styles === */
 @media screen and (max-width: 768px) {
-  .logo {
-    margin-left: 1rem;
-  }
-
   .hamburger {
     display: block;
   }
 
   .nav-links {
-    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
     background-color: #0d0d0d;
     border-top: 1px solid #00ff88;
-    padding: 1rem 0;
-    margin: 0;
+    display: none;
+    padding: 1.5rem 0;
   }
 
   .nav-links.show-menu {
@@ -126,17 +120,6 @@ body:not(.dark) .hamburger {
 
   .nav-links a,
   .mode-toggle {
-    margin: 1rem 0;
-  }
-}
-
-/* === Desktop View Only (override margins) === */
-@media screen and (min-width: 1024px) {
-  .logo {
-    margin-left: 300px; /* ✅ Only for desktop */
-  }
-
-  .nav-links {
-    margin-right: 300px; /* ✅ Only for desktop */
+    margin: 0.8rem 0;
   }
 }
